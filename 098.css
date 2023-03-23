@@ -1,186 +1,123 @@
+* {
+     box-sizing: border-box;
+}
+
 body {
-
-  background-color: transparent;
-
-  margin: 0 auto;
-
+     background: #1c1e22;
+     color: #fff;
 }
-#wrapper {
-
-      margin: 0 auto;
-
-      width: 100%;
-
-      text-align: center;
-
-}
-nav {
-
-    margin: 0 auto;
-
-    margin-top: 3em;
-
-    width: 1083px;
-
-}
-nav ul {
-
-  text-align: left;
-
-  display: inline;
-
-  margin: 0;
-
-  padding: 1em 1em 1em 0;
-
-  list-style: none;
-
-}
-nav ul li {
-
-  display: inline-block;
-
-  margin-right: .01em;
-
-  position: relative;
-
-  padding: 1em 3em;
-
-  background: blue;
-
-  -webkit-transition: all 0.2s;
-
-  -moz-transition: all 0.2s;
-
-  -ms-transition: all 0.2s;
-
-  -o-transition: all 0.2s;
-
-  transition: all 0.2s;
-
-}
-nav li a {
-
-      padding-bottom: 1em;
-
-      text-decoration: none;
-
-      cursor: pointer;
-
-      font-size: 14px;
-
-      padding: 21px;
-
-      text-decoration: none;
-
-      font-weight: bold;
-
-      font-family: Consolas, monaco, monospace;
-
-      color: gray;
-
-}
-nav ul li:hover {
-
-  background-color: green;
-
-}
-nav ul li ul {
-
-  padding: 0;
-
-  position: absolute;
-
-  top: 3.5em;
-
-  left: 0;
-
-  width: 16em;
-
-  -webkit-box-shadow: none;
-
-  -moz-box-shadow: none;
-
-  box-shadow: none;
-
-  display: none;
-
-  opacity: 0;
-
-  visibility: hidden;
-
-  -webkit-transiton: opacity 0.2s;
-
-  -moz-transition: opacity 0.2s;
-
-  -ms-transition: opacity 0.2s;
-
-  -o-transition: opacity 0.2s;
-
-  -transition: opacity 0.2s;
-
-}
-nav ul li ul li {
-
-  background-color: skyblue;
-
-  display: block;
-
-  color: #ffffff;
-
-  text-shadow: 0 1px 0 #000;
-
-}
-nav ul li ul li:hover {
-
-background-color: green;
-
+.support-warning {
+     background: #ccb11c;
+     color: #000;
+     display: block;
+     font-family: 'Raleway', sans-serif;
+     font-weight: 700;
+     opacity: 0.95;
+     padding: 3rem;
+     position: fixed;
+     text-align: center;
+     top: 0;
+     left: 0;
+     width: 100%;
+     z-index: 5;
 }
 
-nav ul li:hover ul {
-
-  display: block;
-
-  opacity: 1;
-
-  visibility: visible;
-
+.support-warning a {
+     color: inherit;
 }
-#frameset {
-
-width: 145%;
-
-overflow: hidden;
-
+.l-grid {
+     display: flex;
+     flex-wrap: wrap;
 }
-.right {
 
-  float:left;
-
-  width:49%;
-
-  height: 300px;
-
-  background:steelblue;
-
+.l-grid > .l-grid__item {
+     flex: 1 0 auto;
 }
-.left {
 
-  float:left;
-
-  width:50%;
-
-  height: 300px;
-
-  background:blue;
-
+.l-grid--4x4 > .l-grid__item {
+     width: 25%;
 }
-footer {
 
-width: 1062px;
+@supports(display: grid) {
+     .support-warning {
+          display: none;
+     }
+     .l-grid--4x4 > .l-grid__item {
+        width: auto;
+    }
 
-background: black;
+    .l-grid {
+         display: grid;
+    }
+}
+.l-grid--4x4 {
+     grid-template-columns: repeat(4, 1fr);
+     grid-template-rows: repeat(3, minmax(13rem, 1fr));
+}
 
-color: yellow;
+.l-span-column-2 {
+     grid-column-start: span 2;
+}
 
+.l-span-row-2 {
+     grid-row-start: span 2;
+}
+
+.l-full-height {
+     min-height: 100vh;
+}
+
+.align-center {
+     align-items: center;
+     justify-content: center;
+}
+
+.content {
+     padding: 3.5rem;
+     max-width: 400px;
+}
+.heading {
+     font-family: 'Nautilus Pompilius', serif;
+     font-size: 1.5rem;
+     font-weight: 700;
+     line-height: 1.2;
+     margin-bottom: 1rem;
+}
+
+.description {
+     font-family: 'Open Sans', sans-serif;
+     font-size: 1rem;
+     line-height: 1.5;
+}
+.theme-gray {
+   background: pink;
+   color: black;
+
+}.theme-green {
+   background: green;
+   color: orange;
+
+}.theme-red {
+   background: blue;
+   color: gray;
+}
+.img-background {
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center center;
+     color: #fff;
+}
+.img-background--kotik {
+     background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://raw.githack.com/sleepyw22/hello/main/kotik.jpg');
+}
+
+.img-background--sobachka {
+     background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://raw.githack.com/sleepyw22/hello/main/sobachka.jpg');
+}
+
+.img-background--feechka {
+     background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://raw.githack.com/sleepyw22/hello/main/feechka.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+     color: #fff;
 }
